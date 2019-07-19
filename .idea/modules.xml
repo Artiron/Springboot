@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Boot.spring.iml" filepath="$PROJECT_DIR$/Boot.spring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo.iml" filepath="$PROJECT_DIR$/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rest-module/rest-module.iml" filepath="$PROJECT_DIR$/rest-module/rest-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/service-module/service-module.iml" filepath="$PROJECT_DIR$/service-module/service-module.iml" />
+      <module fileurl="file://$PROJECT_DIR$/web-module/web-module.iml" filepath="$PROJECT_DIR$/web-module/web-module.iml" />
     </modules>
   </component>
 </project>
