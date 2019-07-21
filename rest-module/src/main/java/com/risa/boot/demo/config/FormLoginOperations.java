@@ -3,9 +3,11 @@ package com.risa.boot.demo.config;
 import com.fasterxml.classmate.TypeResolver;
 import com.google.common.collect.Multimap;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import springfox.documentation.builders.ApiListingBuilder;
 import springfox.documentation.builders.OperationBuilder;
 import springfox.documentation.builders.ParameterBuilder;
@@ -24,6 +26,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.*;
 
 @Component
 public class FormLoginOperations extends ApiListingScanner {
@@ -45,6 +48,7 @@ public class FormLoginOperations extends ApiListingScanner {
         operations.add(new OperationBuilder(new CachingOperationNameGenerator())
                 .method(HttpMethod.POST)
                 .uniqueId("login")
+                .tags(Collections.singleton("Авторизация"))
                 .parameters(Arrays.asList(
                         new ParameterBuilder()
                                 .name("username")
@@ -52,7 +56,6 @@ public class FormLoginOperations extends ApiListingScanner {
                                 .parameterType("query")
                                 .type(typeResolver.resolve(String.class))
                                 .modelRef(new ModelRef("string"))
-                                .order(0)
                                 .build(),
 
                         new ParameterBuilder()
@@ -61,9 +64,8 @@ public class FormLoginOperations extends ApiListingScanner {
                                 .parameterType("query")
                                 .type(typeResolver.resolve(String.class))
                                 .modelRef(new ModelRef("string"))
-                                .order(100)
                                 .build()))
-                .summary("Log in") //
+                .summary("Вход в API через Boot Security") //
                 .notes("Тут вы можете войти в сервис")
                 .build());
         apis.add(new ApiDescription("/login", "Authentication documentation", operations, false));
@@ -75,4 +77,5 @@ public class FormLoginOperations extends ApiListingScanner {
 
         return def;
     }
+
 }
