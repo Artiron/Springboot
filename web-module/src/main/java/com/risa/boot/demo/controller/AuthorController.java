@@ -28,6 +28,7 @@ public class AuthorController {
         modelAndView.setViewName("authors");
         modelAndView.addObject("authorsList", authors);
         return modelAndView;
+
     }
 
     @RequestMapping(value = "edit/{id}", method = RequestMethod.GET)
