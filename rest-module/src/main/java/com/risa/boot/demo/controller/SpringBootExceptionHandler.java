@@ -17,8 +17,9 @@ public class SpringBootExceptionHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<ExceptionWrapper> handleEntityNotFoundException(EntityNotFoundException ex) {
         return new ResponseEntity<>(new ExceptionWrapper(ex.getMessage()), HttpStatus.NOT_FOUND);
     }
+
     @ExceptionHandler(EmptyResultDataAccessException.class)
-    public ResponseEntity<ExceptionWrapper> handleEmptyResultDataAccessException(EmptyResultDataAccessException ex){
+    public ResponseEntity<ExceptionWrapper> handleEmptyResultDataAccessException(EmptyResultDataAccessException ex) {
         return new ResponseEntity<>(new ExceptionWrapper(ex.getMessage()), HttpStatus.BAD_REQUEST);
     }
 }

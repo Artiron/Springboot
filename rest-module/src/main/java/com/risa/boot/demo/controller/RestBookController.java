@@ -40,8 +40,8 @@ public class RestBookController {
 
     @PostMapping(value = "save")
     @ApiOperation(value = "Сохранит книгу", response = BookDto.class)
-    public BookDto bookSave(@ModelAttribute BookDto book){
-       return bookService.save(book);
+    public BookDto bookSave(@RequestBody BookDto bookDto){
+       return bookService.save(bookDto);
     }
 
     @GetMapping(value = "/getBooksByAuthorId/{id}")

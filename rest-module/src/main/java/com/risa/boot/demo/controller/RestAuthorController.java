@@ -32,7 +32,7 @@ public class RestAuthorController {
 
     @PostMapping(value = "save")
     @ApiOperation(value = "Сохранит автора", response = AuthorDto.class)
-    public AuthorDto saveAuthor(@ModelAttribute AuthorDto author) {
+    public AuthorDto saveAuthor(@RequestBody AuthorDto author) {
         return authorService.save(author);
     }
 
