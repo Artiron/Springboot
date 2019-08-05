@@ -81,11 +81,21 @@ public class ControllerIntegrationTest {
 
     @Test
     public void getBooksTest() {
+        int n = 3;
+        for (int i = 0; i < n; i++) {
+            BookDto bookDto = new BookDto();
+            bookDto.setBookName("DROCUI" + i);
+            bookDto.setCountPage(99);
+            bookDto.setYear(1999);
+            saveBook(bookDto);
+        }
         BookDto[] bookDtos = given()
                 .when().get("/rest/books/")
                 .then().extract().body().as(BookDto[].class);
-        Assert.assertEquals(bookDtos.length, 0);
+        Assert.assertEquals(bookDtos.length, n);
     }
+
+
 }
 
 
