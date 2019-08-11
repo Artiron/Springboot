@@ -1,17 +1,15 @@
 package com.risa.boot.demo.service.impl;
 
-import com.risa.boot.demo.mapper.AuthorMapper;
 import com.risa.boot.demo.entity.Author;
+import com.risa.boot.demo.mapper.AuthorMapper;
 import com.risa.boot.demo.model.AuthorDto;
 import com.risa.boot.demo.repository.AuthorRepository;
 import com.risa.boot.demo.service.api.AuthorService;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-@Transactional
 public class AuthorServiceImpl implements AuthorService {
     private AuthorMapper authorMapper;
     private AuthorRepository authorRepository;

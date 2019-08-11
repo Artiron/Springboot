@@ -1,18 +1,16 @@
 package com.risa.boot.demo.service.impl;
 
 
-import com.risa.boot.demo.mapper.BookMapper;
 import com.risa.boot.demo.entity.Book;
+import com.risa.boot.demo.mapper.BookMapper;
 import com.risa.boot.demo.model.BookDto;
 import com.risa.boot.demo.repository.BooksRepository;
 import com.risa.boot.demo.service.api.BookService;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-@Transactional
 public class BookServiceImpl implements BookService {
 
     private BooksRepository booksRepository;

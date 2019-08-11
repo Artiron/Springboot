@@ -6,6 +6,15 @@ import java.util.Set;
 @Entity
 @Table(name = "usr")
 public class User {
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+        this.passwordConfirm = password;
+    }
+
+    public User() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
